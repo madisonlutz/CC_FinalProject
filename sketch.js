@@ -6,20 +6,20 @@ var bg;
 var frame;
 var leaves;
 //the scene is twice the size of the canvas
-var SCENE_W = 1600;
-var SCENE_H = 800;
+//var SCENE_W = 1600;
+//var SCENE_H = 800;
 
 
 
 
 function preload(){
  	frame = loadImage("assets/frame.png");
- 	leaves = loadImage("assets/leaves.png")
+ 	leaves = loadImage("assets/leavesbig.png")
 
 }
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(1200,675);
    
 
   
@@ -36,9 +36,9 @@ function draw() {
   //a camera is created automatically at the beginning
   
   //.5 zoom is zooming out (50% of the normal size)
-  if(mouseIsPressed)
-    camera.zoom = .5;
-  else
+  //if(mouseIsPressed)
+  //  camera.zoom = .5;
+  //else
     camera.zoom = 1;
   
   //set the camera position to the mouse position
@@ -49,14 +49,14 @@ function draw() {
   
  //right now I am having the issue of the camera not staying within the confines of the leaves in the background
     
-image(leaves, 0, 0);
+image(leaves, -100, -100);
   //I can turn on and off the camera at any point to restore
   //the normal drawing coordinates, the frame will be drawn at 
   //the absolute 0,0 (try to see what happens if you don't turn it off
   
     camera.off();
 
-image(frame, 0, 0);
+image(frame, 0, 0, 1200, 675);
     
  
 
