@@ -4,17 +4,18 @@
 //virtual camera
 //move the mouse around
 
-var bg;
+
 var frame;
 var leaves;
 var frog;
-var frogimg;
+//var frogimg;
 
 
 function preload(){
  	frame = loadImage("assets/frame.png");
  	leaves = loadImage("assets/leavesbig.png");
-    frogimg = loadImage("assets/frog01.png");
+    //frogimg = loadImage("assets/frog01.png");
+    frogani = loadAnimation("assets/frog01.png", "assets/frog12.png");
 }
 
 function setup() {
@@ -85,7 +86,7 @@ function Frog (){
     this.position = new createVector (random(365, 1230), random(253, 542)); //create vector to store the position of the frog
     
     this.display = function (){
-     image(frogimg, this.position.x, this.position.y, 100, 100); //show the frog drawing somewhere on within the leaves
+     animation(frogani, this.position.x, this.position.y, 50, 50); //show the frog drawing somewhere on within the leaves
     }
     
     
