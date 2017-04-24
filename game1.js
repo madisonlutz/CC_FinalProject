@@ -8,7 +8,8 @@
 var frame;
 var leaves;
 var frog;
-//var frogimg;
+//var frogimg; //variable for frog image
+var frogani; //variable for the frog animation
 
 
 function preload(){
@@ -25,10 +26,10 @@ function setup() {
     frog = new Frog(); //create a new frog
 
 
-/* P5.play failed to work for me, I have not figured out why yet.
-  frog = createSprite(500, 500);
-  frog.addAnimation("normal", "assets/frog01.png",  "assets/frog02.png");
-*/
+// P5.play sprites failed to work for me, I have not figured out why yet.
+//  frog = createSprite(random(365, 1230), random(253, 542), 400, 400);
+//  frog.addAnimation('normal', frogani);
+
     
 }
 
@@ -51,7 +52,7 @@ image(leaves, 0, 0);
 
 //Play Frog -- I tried using the play library to have the frog as a sprite but it wouldn't load
     
-//drawSprites();
+//drawSprite(frog);
     
     
 /*Vector frog -- I want to have it so that when you hover over the frog something happen. I was testing it out but I couldn't get it
@@ -89,6 +90,6 @@ function Frog (){
      animation(frogani, this.position.x, this.position.y, 50, 50); //show the frog drawing somewhere on within the leaves
     }
     
-    
+   
         
 }
