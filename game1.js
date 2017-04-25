@@ -75,8 +75,10 @@ frog.display();
 camera.off(); //turn camera off so that the binoculars frame remains stationary
 image(frame, 0, 0, 1200, 675);
 
-
-    
+////Future functionality/////
+/* I want to make it so that whenever the user finds the frog and hovers over it 
+there is a pop-up to give more information about the red-eyed tree frog.
+*/
  
 
 }
