@@ -11,11 +11,13 @@ var C;
 var D;
 var OKbutton;
 var answer;
+var phase;
 
 function setup() { 
   createCanvas(640, 360);
   mode = 0;
   OKbutton = false;
+  phase = 0;
 } 
 
 function draw() { 
@@ -35,6 +37,7 @@ function draw() {
   
   if (mode === 0 && OKbutton===true){ //is the OK button clicked
     mode = 1;
+    phase = 1;
   }
   
   //QUESTION 1///
@@ -51,13 +54,14 @@ function draw() {
   }
   
   
-  if (mode === 4 && OKbutton===true) { //wrong answer for Q1 redirect to retry
+  if (mode === 4 && OKbutton===true && phase==1) { //wrong answer for Q1 redirect to retry
     mode = 1;
     C = 0;
   }
     
-  if (mode === 5 && OKbutton===true) { //correct answer for Q1 redirect to Q2
+  if (mode === 5 && OKbutton===true && phase==1) { //correct answer for Q1 redirect to Q2
     mode = 2;
+    phase = 2;
   }
     
    ////QUESTION 2/////
@@ -74,18 +78,21 @@ function draw() {
   }
   
   
-  if (mode === 4 && OKbutton===true) { //wrong answer for Q2 redirect to retry
+  if (mode === 4 && OKbutton===true && phase==2) { //wrong answer for Q2 redirect to retry
     mode = 2;
     A=0;
   }
     
-  if (mode === 5 && OKbutton===true) { //correct answer for Q2 redirect to Q3
+  if (mode === 5 && OKbutton===true && phase==2) { //correct answer for Q2 redirect to Q3
     mode = 3;
+    phase = 3;
   }
   
     
-       ////QUESTION 3///// -- There is a glitch with Q3. If you get it wrong instead
-                            //of taking you back to Q3 it takes you to Q1
+    ////QUESTION 3///// -- There is a glitch with Q3. If you get it wrong instead
+                     // -- of taking you back to Q3 it takes you to Q1
+    
+    //////---GLITCH IS FIXED 4/25/17---///////
     
     if (mode === 3 && D===1){ //correct answer for Q2
     mode = 5;
@@ -99,13 +106,13 @@ function draw() {
   }
   
   
-  if (mode === 4 && OKbutton===true) { //wrong answer for Q2 redirect to retry
+  if (mode === 4 && OKbutton===true && phase==3) { //wrong answer for Q2 redirect to retry
     mode = 3;
     D = 0;
   }
     
 
-  if (mode === 5 && OKbutton===true) { //wrong answer for Q2 redirect to retry
+  if (mode === 5 && OKbutton===true && phase==3) { //wrong answer for Q2 redirect to retry
     mode = 6;
   }
   
@@ -135,13 +142,14 @@ function draw() {
   if (mode === 5){ //display correct answer screen
     correct(0, 0);
   }
-  
-
+    
+    
   if (mode === 6){ //display correct answer screen
     endScreen(0, 0);
-    signal(0,0, 'red');
+    signal(0,0, 'green');
   }
   
+  /* REPLACED BY mousePressed FUNCTION
   
   if (mouseIsPressed && mouseX<300 && mouseX>263 && mouseY<194 && mouseY>167){ //is A clicked
     A = 1;
@@ -172,18 +180,20 @@ function draw() {
   }
 
   
+  
   if (mouseIsPressed && OKbutton==false && mouseX<376 && mouseX>264 && mouseY<325 && mouseY>276){
     OKbutton = true;
   } else {
       OKbutton = false;
   }
     
-
+*/
  
   
   
-  console.log(mouseX, mouseY);
+  //console.log(mouseX, mouseY);
   console.log(OKbutton);
+  console.log(mode);
 }
 
 function remote(x, y){
@@ -201,6 +211,7 @@ function remote(x, y){
 }
 
 function signal(x, y, c){
+  
   fill(0);
   rect(320+x, 40+y, 10, 20);
   
@@ -266,10 +277,10 @@ function endScreen (x, y){
   
   fill(0);
   noStroke();
-  textSize(20);
+  textSize(15);
   textAlign(CENTER);
-  text('SIGNAL SENT.', 320, 108);
-  text('MISSION COMPLETE!', 320, 128);
+  text('SIGNAL SENT.', 320, 98);
+  text('MISSION COMPLETE!', 320, 118);
 }
 
 function button (x, y, c, t){
@@ -321,6 +332,40 @@ function correct (x, y){
 }
 
 
-
+function mousePressed(){
+  if (OKbutton==false && mouseX<376 && mouseX>264 && mouseY<325 && mouseY>276){
+    OKbutton = true;
+  } else {
+      OKbutton = false;
+  }
+    
+  if (mouseX<300 && mouseX>263 && mouseY<194 && mouseY>167){ //is A clicked
+    A = 1;
+    B = 2;
+    C = 2;
+    D = 2;
+  }
+    
+  if (mouseX<379 && mouseX>341 && mouseY<194 && mouseY>167){ //is B clicked
+    A = 2;
+    B = 1;
+    C = 2;
+    D = 2;
+  }
+  
+  if (mouseX<300 && mouseX>263 && mouseY<245 && mouseY>216){ //is C clicked
+    A = 2;
+    B = 2;
+    C = 1;
+    D = 2;
+  }
+  
+  if (mouseX<379 && mouseX>341 && mouseY<245 && mouseY>216){ //is D clicked
+    A = 2;
+    B = 2;
+    C = 2;
+    D = 1;
+  }
+} //end of mousePressed
 
 

@@ -1,0 +1,66 @@
+{"frames": [
+
+{
+	"filename": "macaw01.png",
+	"frame": {"x":1,"y":1,"w":249,"h":195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":50,"y":33,"w":249,"h":195},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "macaw02.png",
+	"frame": {"x":1,"y":198,"w":249,"h":195},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":50,"y":33,"w":249,"h":195},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "macaw03.png",
+	"frame": {"x":1,"y":713,"w":252,"h":114},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":78,"w":252,"h":114},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "macaw04.png",
+	"frame": {"x":1,"y":829,"w":252,"h":114},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":78,"w":252,"h":114},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "macaw05.png",
+	"frame": {"x":1,"y":395,"w":235,"h":157},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":43,"y":143,"w":235,"h":157},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "macaw06.png",
+	"frame": {"x":1,"y":554,"w":235,"h":157},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":43,"y":143,"w":235,"h":157},
+	"sourceSize": {"w":300,"h":300},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "macawspritesheet.png",
+	"format": "RGBA8888",
+	"size": {"w":254,"h":944},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d676e8e8b250eca458d142f65b01742d:aa36ff0e9d3d15d340d86f8982714f2d:26381f994dc4eeef8d209082a98dae3e$"
+}
+}
