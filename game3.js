@@ -19,11 +19,14 @@ var bugs;
 var macaw;
 var acai;
 var foodcount;
+var canopy;
+var seed;
 
 function preload(){
     acai = loadImage("assets/fruit.png");
     worm = loadImage ("assets/worm.png");
-    leaves = loadImage("assets/leavesbig.png");
+    canopy = loadImage("assets/canopy.png");
+    seed = loadImage ("assets/seeds.png");
     
 }
 
@@ -51,6 +54,9 @@ function setup() {
     {
     var berries = createSprite(random(0, width), random(0,height));
     berries.addImage(acai);
+    var seeds = createSprite(random(0, width), random(0,height));
+    seeds.addImage(seed);
+    collectibles.add(seeds);
     collectibles.add(berries);
     
     }
@@ -63,7 +69,7 @@ function setup() {
 
 
 function draw() {
-  background(leaves);  
+  background(canopy);  
   
  macaw.velocity.x = (mouseX-macaw.position.x)/10;
  macaw.velocity.y = (mouseY-macaw.position.y)/10; 

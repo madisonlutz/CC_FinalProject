@@ -10,6 +10,7 @@ var leaves;
 var frog;
 var frogx;
 var frogy;
+var speech;
 //var frogimg; //variable for frog image
 //var frogani; //variable for the frog animation
 
@@ -17,6 +18,7 @@ var frogy;
 function preload(){
  	frame = loadImage("assets/frame.png");
  	leaves = loadImage("assets/leavesbig.png");
+    speech = loadImage("assets/frogbubble.png");
     //frogimg = loadImage("assets/frog01.png");
     //frogani = loadAnimation("assets/frog01.png", "assets/frog12.png");
 }
@@ -84,7 +86,7 @@ there is a pop-up to give more information about the red-eyed tree frog.
 
 function info(){
     fill(255);
-    rect(frogx-200, frogy-110, 130, 50);
+    image(speech, frogx-230, frogy-200);
      
         
 }

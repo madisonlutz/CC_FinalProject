@@ -1,6 +1,5 @@
 // GAME 2 -- QUIZ AT THE END 
 
-//Glitch with Question 3 see line 87
 
 var mode;
 var correct;
