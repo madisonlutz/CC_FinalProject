@@ -12,6 +12,7 @@ function scene2(){ ///FOREST FLOOR
 function scene3(){ ////MEETING THE SCIENTIST
         background(ffloor);
         removeSprite(spaceship0);
+        drawSprite(ladder);
         drawSprite(table);
         drawSprite(sci);
         drawSprite(alien);
@@ -21,23 +22,24 @@ function scene3(){ ////MEETING THE SCIENTIST
             console.log('click');
             game = 1;
         }
+        
+        ladder.onMousePressed = function (){
+            console.log('click');
+            scene = 4;
+        }
     
     if (game == 1){
         decay();
     }
     
-    
-    
-    
-        
-    
-    
-    
-    //sci.position = (300, 500);
+
 }
 
 function scene4(){ /////FINDING THE FROG
-    
+    background (canopy);
+    image (housefloor, 0, 575);
+    ladder.position.y = 337.5;
+    drawSprite(ladder);
 }
 
 

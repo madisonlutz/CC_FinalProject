@@ -1,0 +1,30 @@
+{"frames": [
+
+{
+	"filename": "housefloor.png",
+	"frame": {"x":1,"y":1,"w":250,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":250,"h":250},
+	"sourceSize": {"w":250,"h":250},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "ladder.png",
+	"frame": {"x":253,"y":1,"w":242,"h":250},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":0,"w":242,"h":250},
+	"sourceSize": {"w":250,"h":250},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tiles.png",
+	"format": "RGBA8888",
+	"size": {"w":496,"h":252},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:25b61057c82484cacd0c0802e1654db6:476d00e169b359e376a1dd9348b54d02:accbe1e7e294ded8391337fc1c446319$"
+}
+}

@@ -22,10 +22,10 @@ var table;
 var computer;
 var game;
 var exit;
-var game1;
-var game2;
-var game3;
-var game4;
+var ladder;
+var ladderpic;
+var canopy;
+var housefloor;
 
 
 function preload(){
@@ -36,6 +36,9 @@ function preload(){
     bubble1_1 = loadImage ("assets/collide/collide1_1.png");
     computer = loadImage ("assets/computertable.png");
     exit = loadImage ("assets/exit.png");
+    ladderpic = loadImage ("assets/ladder.png");
+    canopy = loadImage ("assets/canopy.png");
+    housefloor = loadImage ("assets/housefloor.png");
     
     alien_walk = loadAnimation("assets/walking/walking01.png", "assets/walking/walking08.png");
     
@@ -44,6 +47,8 @@ function preload(){
     sci_walk = loadAnimation("assets/walking/sciwalk01.png", "assets/walking/sciwalk08.png");
     
     sci_stand = loadAnimation("assets/standing/scistand01.png", "assets/standing/scistand06.png");
+    
+
 }
 
 function setup(){
@@ -67,8 +72,6 @@ function setup(){
     alien = createSprite (0, 550);
     alien.addAnimation('walk', alien_walk);
     alien.addAnimation('stand', alien_stand);
-    
-
 //-----------------------////
     
 //////SCIENTIST SPRITE///////
@@ -82,6 +85,12 @@ function setup(){
     table = createSprite (300,530);
     table.addImage(computer);
     table.setCollider('rectangle',0,0,300,200);
+//---------------------------////
+    
+//////LADDER SPRITE///////
+    ladder = createSprite (810,285);
+    ladder.addImage(ladderpic);
+    ladder.setCollider('rectangle',0,0,200,675);
 //---------------------------////
     
 }//setup end
