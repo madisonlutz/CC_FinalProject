@@ -9,5 +9,15 @@ function collide3_1 (){ //scene 3 collision 1
 
 function collide4_1 (){ //scene 3 collision 1
     image(bubble4_1, 750, 265);
-    
+    sci.mirrorX(-1);
+}
+
+function collide5_1 (){ //scene 3 collision 1
+    image(bubble5_1, 750, 250);
+    sci.mirrorX(-1);
+}
+
+function collide6_1 (){ //scene 3 collision 1
+    image(bubble6_1, 750, 250);
+    sci.mirrorX(-1);
 }

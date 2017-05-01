@@ -32,6 +32,7 @@ function search() {
 if(scene==4); {
     exitpress.onMousePressed = function(){
         game2=false;
+        
     }
 }
    

@@ -20,7 +20,6 @@ var sci_walk;
 var sci_stand;
 var table;
 var computer;
-//var game;
 var exitbutton;
 var ladder;
 var ladderpic;
@@ -28,6 +27,8 @@ var canopy;
 var housefloor;
 var bubble3_1;
 var bubble4_1;
+var bubble5_1;
+var bubble6_1;
 var stool;
 var binoculars;
 var frame;
@@ -37,11 +38,23 @@ var frogx;
 var frogy;
 var speech;
 var frogani;
-var game1 = false;
-var game2 = false;
-var game3 = false;
-var game4 = false;
+var game1;
+var game2;
+var game3;
+var game4;
 var exitpress;
+var collectibles;
+var bugs;
+var macaw;
+var acai;
+var foodcount;
+var canopy;
+var seed;
+var fly;
+var understory;
+var laddertop;
+var gadget;
+var doohicky;
 
 
 function preload(){
@@ -60,6 +73,15 @@ function preload(){
     frame = loadImage("assets/frame.png");
  	leaves = loadImage("assets/leavesbig.png");
     speech = loadImage("assets/frogbubble.png");
+    acai = loadImage("assets/fruit.png");
+    worm = loadImage ("assets/worm.png");
+    canopy = loadImage("assets/canopy.png");
+    seed = loadImage ("assets/seeds.png");
+    understory = loadImage ("assets/understory.png");
+    bubble5_1 = loadImage ("assets/collide/collide5_1.png");
+    laddertop = loadImage ("assets/laddertop.png");
+    bubble6_1 = loadImage ("assets/collide/collide6_1.png");
+    doohicky = loadImage ("assets/doohicky.png");
     
     alien_walk = loadAnimation("assets/walking/walking01.png", "assets/walking/walking08.png");
     
@@ -71,6 +93,7 @@ function preload(){
     
     frogani = loadAnimation("assets/frog01.png", "assets/frog12.png");
     
+    fly = loadAnimation ("assets/macaw01.png", "assets/macaw06.png");
     
     
 
@@ -81,6 +104,11 @@ function setup(){
     scene = 1;
     collidecount = 0;
     game = 0;
+    
+    game1 = false;
+    game2 = false;
+    game3 = false;
+    game4 = false;
     
     ////FROG LOCATION/////
     frogx = random(365, 1230); 
@@ -144,6 +172,47 @@ function setup(){
     
 //--------------------//
     
+////MACAW SPRITE/////
+    
+    macaw = createSprite(400, 400);
+    macaw.addAnimation("flying", fly);
+    
+///--------------////
+  
+////MACAW SETUP/////
+  foodcount = 20;
+  collectibles = new Group();
+  bugs = new Group();  
+
+  
+  for(var i=0; i<5; i++)
+    {
+    var worms = createSprite(random(0, width), random(0,height));
+    worms.addImage(worm);
+    bugs.add(worms);
+    
+    }
+    
+  for(var i=0; i<10; i++)
+    {
+    var berries = createSprite(random(0, width), random(0,height));
+    berries.addImage(acai);
+    var seeds = createSprite(random(0, width), random(0,height));
+    seeds.addImage(seed);
+    collectibles.add(seeds);
+    collectibles.add(berries);
+    
+    }
+//------------------------//   
+    
+/////GADGET SPRITE/////
+    gadget = createSprite(100,510);
+    gadget.addImage('normal', doohicky);
+    gadget.setCollider('rectangle',0,0,100,100);
+    
+    
+//-------------------//
+    
 }//setup end
 
 function draw(){
@@ -151,9 +220,8 @@ function draw(){
 //CONSOLE//
     
 console.log(scene);
-console.log(game);
 console.log(game2);
-//console.log(mouseX, mouseY);
+console.log(mouseX, mouseY);
     
 //----------------///
 
@@ -222,35 +290,20 @@ console.log(game2);
       scene4();  
     }
     
+    if (scene == 5){ ///scene 1
+      scene5();  
+    }
+    
+    if (scene == 6){ ///scene 1
+      scene6();  
+    }
+    
+    if (scene == 7){ ///scene 1
+      scene7();  
+    }
+    
 ///------------------------////
     
-////////SCENE CONTROLS///////
-/*    
-    if (game1==true){ ///scene 1
-      game2 = false;
-      game3 = false;
-      game4 = false;
-    }
-    
-    if (game2==true){ ///scene 1
-      game1 = false;
-      game3 = false;
-      game4 = false;  
-    }
-    
-    if (game3==true){ ///scene 1
-      game2 = false;
-      game1 = false;
-      game4 = false;  
-    }
-    
-    if (game4==true){ ///scene 1
-      sgame2 = false;
-      game3 = false;
-      game1 = false;
-    }
-*/  
-///------------------------////
     
     
 }//draw end
