@@ -92,9 +92,7 @@ function scene5(){ ////FINDING THE FROG 2
             game3=true;
         }
         
-        ladder.onMousePressed = function(){
-            scene = 6;
-        }
+        
     }
     
 
@@ -127,6 +125,17 @@ function scene6(){ ////SENDING SIGNAL
 }
 
 function scene7(){ ///LEAVING RAINFOREST
+    camera.off();
+    background(emergent);
+    spaceship1.setVelocity(4, -3);
+    drawSprite(spaceship1);
     
+    if (spaceship1.position.y < 0){
+        textSize(100);
+        noStroke();
+        fill(255);
+        text ('THE END', width/2, height/2);
+    }
+
 }
 

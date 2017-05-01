@@ -55,6 +55,11 @@ var understory;
 var laddertop;
 var gadget;
 var doohicky;
+var mode;
+var OKbutton;
+var phase;
+var spaceship1;
+
 
 
 function preload(){
@@ -132,6 +137,12 @@ function setup(){
     spaceship0.addImage(ship0);
 //---------------------------////
     
+//////SPACESHIP1 SPRITE///////
+    spaceship1 = createSprite (0, 700);
+    spaceship1.addImage(ship);
+    
+//---------------------------////
+    
 //////ALIEN SPRITE///////
     alien = createSprite (0, 550);
     alien.addAnimation('walk', alien_walk);
@@ -206,12 +217,18 @@ function setup(){
 //------------------------//   
     
 /////GADGET SPRITE/////
-    gadget = createSprite(100,510);
+    gadget = createSprite(100,545);
     gadget.addImage('normal', doohicky);
     gadget.setCollider('rectangle',0,0,100,100);
     
     
 //-------------------//
+    
+////GAME 4 SETUP///
+    mode = 0;
+    OKbutton = false;
+    phase = 0;
+//----------------///
     
 }//setup end
 
@@ -236,6 +253,8 @@ console.log(mouseX, mouseY);
         //scene3();
         
     }
+    
+
   
     
 ///////ALIEN CONTROLS////////

@@ -1,26 +1,20 @@
 // GAME 2 -- QUIZ AT THE END 
 
 
-var mode;
+
 var correct;
 var letter;
 var A;
 var B;
 var C;
 var D;
-var OKbutton;
 var answer;
-var phase;
+var finish;
 
-function setup() { 
-  createCanvas(640, 360);
-  mode = 0;
-  OKbutton = false;
-  phase = 0;
-} 
 
-function draw() { 
-  background(255);
+function quiz() { 
+  
+  finish = 0;
   remote(0, 0);
   signal(0,0, 'red');
   button(281, 180, 'blue', 'A');
@@ -114,6 +108,8 @@ function draw() {
   if (mode === 5 && OKbutton===true && phase==3) { //wrong answer for Q2 redirect to retry
     mode = 6;
   }
+    
+
   
 
     ///////////////   END OF QUESTIONS   //////////////////
@@ -146,15 +142,29 @@ function draw() {
   if (mode === 6){ //display correct answer screen
     endScreen(0, 0);
     signal(0,0, 'green');
+      finish = 1;
+    
+    
   }
   
- 
+    
+    drawSprite(exitpress);
+    
+    if(scene==6); {
+        exitpress.onMousePressed = function(){
+            game4=false;
+        }
+    }
+    
+
   
   
   //console.log(mouseX, mouseY);
   console.log(OKbutton);
   console.log(mode);
-}
+    
+    
+} //end quiz
 
 function remote(x, y){
   rectMode(CENTER);
@@ -326,6 +336,10 @@ function mousePressed(){
     C = 2;
     D = 1;
   }
+    
+    if (finish == 1){
+        scene = 7;
+    }
 } //end of mousePressed
 
 
