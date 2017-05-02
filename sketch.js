@@ -59,10 +59,32 @@ var mode;
 var OKbutton;
 var phase;
 var spaceship1;
-
-
+var rainforest;
+var introsound;
+var sally1;
+var computersound;
+var sally2;
+var sally3;
+var macawsound;
+var sally4;
+var introcount;
+var computercount;
+var sally1count;
+var sally2count;
+var sally3count;
+var sally4count;
+var macawcount;
 
 function preload(){
+    rainforest = loadSound('assets/rainforest.mp3');
+    introsound = loadSound('assets/introsound.WAV');
+    sally1 = loadSound('assets/sally1.WAV');
+    sally2 = loadSound('assets/sally2.WAV');
+    sally3 = loadSound('assets/sally3.WAV');
+    sally4 = loadSound('assets/sally4.WAV');
+    macawsound = loadSound('assets/macawsound.WAV');
+    computersound = loadSound('assets/computersound.WAV');
+    
     emergent = loadImage("assets/emergent.png");
     ship = loadImage ("assets/spaceship.png");
     ffloor = loadImage ("assets/floor.png");
@@ -105,9 +127,21 @@ function preload(){
 }
 
 function setup(){
+    
+///ADDING RAINFOREST SOUND////
+   rainforest.setVolume(0.3);
+   rainforest.play();
+//------------------------//
+    
     createCanvas(1200,675);
     scene = 1;
-    collidecount = 0;
+    introcount = 0;
+    computercount = 0;
+    sally1count = 0;
+    sally2count = 0;
+    sally3count = 0;
+    sally4count = 0;
+    macawcount = 0;
     game = 0;
     
     game1 = false;
@@ -129,7 +163,7 @@ function setup(){
 //////SPACESHIP SPRITE///////
     spaceship = createSprite (0,0);
     spaceship.addImage(ship);
-    spaceship.setVelocity(3,3);
+    spaceship.setVelocity(2,1.5);
 //---------------------------////
     
 //////SPACESHIP0 SPRITE///////
@@ -233,7 +267,9 @@ function setup(){
 }//setup end
 
 function draw(){
-       
+
+
+    
 //CONSOLE//
     
 console.log(scene);

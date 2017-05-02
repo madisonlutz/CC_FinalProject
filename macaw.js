@@ -10,7 +10,13 @@
 
 function birdfly() {
   background(canopy);  
-  
+    
+   if (macawcount == 1){
+      macawsound.playMode('restart');
+      macawsound.setVolume(0.4);
+      macawsound.play();
+  } 
+    
  macaw.velocity.x = (mouseX-macaw.position.x)/10;
  macaw.velocity.y = (mouseY-macaw.position.y)/10; 
     

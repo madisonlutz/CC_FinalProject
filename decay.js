@@ -7,7 +7,14 @@ var forestmode = false;
 
 function decay(){
   background(255, 70);
-
+   
+  if (computercount == 1){
+      computersound.playMode('restart');
+      computersound.setVolume(0.4);
+      computersound.play();
+  }
+  
+    
   board (280, 160); // create the blue back board set up
   
   

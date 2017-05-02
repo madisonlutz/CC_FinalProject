@@ -1,9 +1,22 @@
 function scene1(){ ///ALIEN COMING TO EARTH
+    
     background(emergent);
     drawSprite(spaceship);
+    introcount += 1;
+    
+    if (scene == 1 && introcount == 1){
+       introsound.playMode('restart');
+       introsound.setVolume(0.4);
+       introsound.play();
+    }
+
+    
+    
+    
 } //intro end
 
 function scene2(){ ///FOREST FLOOR
+    //introcount = 0;
     background(ffloor);
     drawSprite(spaceship0);
     drawSprite(alien);
@@ -30,8 +43,11 @@ function scene3(){ ////MEETING THE SCIENTIST
         }
     
     if (game1 == true && scene == 3){
+        computercount += 1;
         decay();
     }
+    
+    
     
 
 }
@@ -68,7 +84,7 @@ function scene4(){ /////FINDING THE FROG
 }//scene 4 end
 
 
-function scene5(){ ////FINDING THE FROG 2
+function scene5(){ ////MACAW
     camera.off();
     
     if (game3 == true && scene==5){
@@ -89,6 +105,7 @@ function scene5(){ ////FINDING THE FROG 2
         alien.collide(sci, collide5_1);
         
         macaw.onMousePressed = function(){
+            macawcount += 1;
             game3=true;
         }
         
