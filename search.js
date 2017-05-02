@@ -1,11 +1,13 @@
 // GAME 1 -- search and find the frog, click on the frog to bring up information about the frog
+//reference: http://p5play.molleindustria.org/examples/index.html?fileName=camera.js
+// I used this exaple to figure out how to use the camera
 
 
 function search() {
   background(0,81,21); 
   
   
-  camera.zoom = 1;
+  camera.zoom = 1; //camera zooms in with relation to the background
   
   //set the camera position to the mouse position
   camera.position.x = mouseX + 600; //by adding half of the width to the mouseX it keeps the camera focused on the leaves without going out of frame

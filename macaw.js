@@ -16,11 +16,12 @@ function birdfly() {
       macawsound.setVolume(0.4);
       macawsound.play();
   } 
-    
+
+//this sets the macaws velocity in relation to the mouse position    
  macaw.velocity.x = (mouseX-macaw.position.x)/10;
  macaw.velocity.y = (mouseY-macaw.position.y)/10; 
     
-    //if mouse is to the left
+    //if mouse is to the left 
   if(mouseX < macaw.position.x - 10) {
     //flip horizontally
     macaw.mirrorX(-1);
@@ -37,8 +38,8 @@ function birdfly() {
   
 
   //asterisk collides against all the sprites in the group bugs
-  macaw.displace(bugs);
-  macaw.overlap(collectibles, collect);
+  macaw.displace(bugs);//pushes bugs away
+  macaw.overlap(collectibles, collect); //collectible sprites are removed if the macaw overlaps with them
 
 
   drawSprites(bugs);
