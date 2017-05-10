@@ -7,7 +7,6 @@
 //after 'eating' the different foods, a pop-up will give more information about that
 //specific food in relation to the macaw's diet
 
-
 function birdfly() {
   background(canopy);  
     
@@ -33,9 +32,6 @@ function birdfly() {
     macaw.mirrorX(1);
     
   }
-
-
-  
 
   //asterisk collides against all the sprites in the group bugs
   macaw.displace(bugs);//pushes bugs away

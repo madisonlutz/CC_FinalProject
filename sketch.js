@@ -225,14 +225,17 @@ function setup(){
 ///--------------////
   
 ////MACAW SETUP/////
-  foodcount = 20;
-  collectibles = new Group();
-  bugs = new Group();  
+//This game is inspired by this p5.play example
+//http://p5play.molleindustria.org/examples/index.html?fileName=collisions2.js#
+    
+  foodcount = 20; //this I added to keep track of how many pieces of food their are
+  collectibles = new Group(); //creates a group of sprites that the macaw will collect
+  bugs = new Group();  //creates a group of sprites that the macaw doesn't like
 
   
   for(var i=0; i<5; i++)
     {
-    var worms = createSprite(random(0, width), random(0,height));
+    var worms = createSprite(random(0, width), random(0,height)); //these three lines of code creates a new worm sprite everytime through the for-loop at a random position and then adds that sprite to the bugs group
     worms.addImage(worm);
     bugs.add(worms);
     
@@ -240,7 +243,7 @@ function setup(){
     
   for(var i=0; i<10; i++)
     {
-    var berries = createSprite(random(0, width), random(0,height));
+    var berries = createSprite(random(0, width), random(0,height)); //this does the same thing as the worms for-loop except for the berries and the seeds adding them to the collectibles group
     berries.addImage(acai);
     var seeds = createSprite(random(0, width), random(0,height));
     seeds.addImage(seed);
